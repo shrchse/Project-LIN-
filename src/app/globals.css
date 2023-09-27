@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,28 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+@keyframes slide-fade-in {
+  from{
+    opacity: 0;
+    transform: translateY(5vh);
+  }
+}
+
+.slide{
+  view-timeline-name: --item-timeline;
+  animation: slide-fade-in both;
+  animation-timeline: --item-timeline;
+  animation-range: contain 0% contain 20%;
+}
+
+.transition-max-h {
+  transition-property: max-height;
+  transition-timing-function: ease-in-out;
+  transition-duration: 300ms;
 }
